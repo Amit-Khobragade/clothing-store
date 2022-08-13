@@ -103,8 +103,5 @@ dist
 # TernJS port file
 .tern-port
 .run.sh
-status.sh
-commit.sh
 pull.sh
 push.sh
-addAll.sh
