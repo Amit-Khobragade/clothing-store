@@ -52,6 +52,8 @@ module.exports = {
     alias: {
       components: path.resolve(__dirname, "src/components"),
       assets: path.resolve(__dirname, "src/assets"),
+      auth: path.resolve(__dirname, "src/auth"),
     },
   },
+  devtool: "eval-source-map",
 };
