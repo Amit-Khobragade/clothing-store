@@ -105,3 +105,4 @@ dist
 .run.sh
 pull.sh
 push.sh
+src/auth/app/firebase.js
