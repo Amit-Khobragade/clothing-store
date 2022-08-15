@@ -103,6 +103,4 @@ dist
 # TernJS port file
 .tern-port
 .run.sh
-pull.sh
-push.sh
 src/auth/app/firebase.js
