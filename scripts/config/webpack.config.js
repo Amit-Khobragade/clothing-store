@@ -1,4 +1,5 @@
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const InlineChunkHtmlPlugin = require("inline-chunk-html-plugin");
 const paths = require("./paths");
 
 const { isDev } = process.env;
@@ -77,6 +78,7 @@ module.exports = () => ({
             useShortDoctype: true,
           },
     }),
+    !isDev && new InlineChunkHtmlPlugin(HTMLWebpackPlugin, [/runtime/]),
   ],
   resolve: {
     extensions: [".js", ".json", ".wasm", ".jsx", ".component.jsx"],
