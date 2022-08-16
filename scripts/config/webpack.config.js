@@ -78,7 +78,7 @@ module.exports = () => ({
             useShortDoctype: true,
           },
     }),
-    !isDev && new InlineChunkHtmlPlugin(HTMLWebpackPlugin, [/runtime/]),
+    new InlineChunkHtmlPlugin(HTMLWebpackPlugin, [/runtime/]),
   ],
   resolve: {
     extensions: [".js", ".json", ".wasm", ".jsx", ".component.jsx"],
