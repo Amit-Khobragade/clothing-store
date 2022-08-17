@@ -104,3 +104,4 @@ dist
 .tern-port
 .run.sh
 src/auth/app/firebase.js
+.vscode
