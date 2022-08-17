@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import OfferSection from "./components/OfferSection/OfferSection.component";
 
 const Home = (props) => {
   return (
     <div>
-      <h1>home</h1>
+      <OfferSection />
     </div>
   );
 };
