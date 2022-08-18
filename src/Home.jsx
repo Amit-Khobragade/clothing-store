@@ -1,10 +1,12 @@
 import React from "react";
-import OfferSection from "./components/OfferSection/OfferSection.component";
+import OffersBanner from "areas/OffersBannner/OffersBanner";
+import { GroupOffers } from "areas/GroupOffers/GroupOffers";
 
 const Home = (props) => {
   return (
     <div>
-      <OfferSection />
+      <OffersBanner />
+      <GroupOffers />
     </div>
   );
 };
