@@ -16,4 +16,6 @@ module.exports = {
   componentsDir: resolve("src/components"),
   authDir: resolve("src/auth"),
   assetsDir: resolve("src/assets"),
+  areaDir: resolve("src/areas"),
+  contextDir: resolve("src/context"),
 };

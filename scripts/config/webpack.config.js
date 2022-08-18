@@ -86,6 +86,8 @@ module.exports = () => ({
       components: paths.componentsDir,
       assets: paths.assetsDir,
       auth: paths.authDir,
+      areas: paths.areaDir,
+      context: paths.contextDir,
     },
   },
   devtool: "eval-source-map",

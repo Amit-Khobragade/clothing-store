@@ -1,4 +1,4 @@
-import { collection, doc, getDocs, query } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import { store } from "../app/firebase";
 
 export const getSections = async () => {
