@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import AuthPage from "auth/AuthPage";
-import Body from "components/Body/Body.component";
+import Body from "areas/Body/Body";
 
 const App = () => {
   return (
