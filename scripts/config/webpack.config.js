@@ -22,7 +22,7 @@ module.exports = () => ({
   mode: isDev ? "development" : "production",
   output: {
     path: paths.buildDir,
-    filename: isDev
+    filename: !isDev
       ? "static/js/[name].[contenthash:8].chunk.js"
       : "static/js/[name].chunk.js",
     assetModuleFilename: isDev
@@ -44,20 +44,12 @@ module.exports = () => ({
         ],
       },
       {
-        test: /.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
         test: /.(png|jpe?g)$/,
         use: ["file-loader"],
       },
       {
         test: /.svg$/,
         use: ["@svgr/webpack"],
-      },
-      {
-        test: /.s[ac]ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },

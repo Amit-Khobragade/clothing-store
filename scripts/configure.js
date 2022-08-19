@@ -1,6 +1,7 @@
 const Webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 const paths = require("./config/paths");
+const fs = require("fs");
 
 process.env.isDev = !!process.argv.find((arg) => arg === "--dev");
 
@@ -14,14 +15,19 @@ if (err) {
 const webpackConf = require("./config/webpack.config")();
 
 const compiler = Webpack(webpackConf);
-const devServerConf = { ...webpackConf.devServer, open: true };
-const server = new WebpackDevServer(devServerConf, compiler);
+if (isDev) {
+  const devServerConf = { ...webpackConf.devServer, open: true };
+  const server = new WebpackDevServer(devServerConf, compiler);
 
-server.startCallback((err) => {
-  if (err) {
-    console.error("There has been some error in webpack: \n\n");
-    console.error(err);
-  }
+  server.startCallback((err) => {
+    if (err) {
+      console.error("There has been some error in webpack: \n\n");
+      console.error(err);
+    }
 
-  console.info("server had started");
-});
+    console.info("server had started");
+  });
+} else {
+  fs.rmdirSync(paths.buildDir);
+  fs.mkdirSync(paths.buildDir);
+}
