@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Offer from "components/Offer/Offer";
 import { OffersContext } from "context/OffersContext/OffersContext";
+import StyledOffersBanner from "./OfferBanner.style";
 
 const OffersBanner = () => {
   const { banners: offers } = useContext(OffersContext);
@@ -10,9 +11,9 @@ const OffersBanner = () => {
   }
 
   return (
-    <div>
+    <StyledOffersBanner>
       {offers.map((offerObject, index) => (<Offer {...offerObject.offer} key={index} />))}
-    </div>
+    </StyledOffersBanner>
   )
 }
 

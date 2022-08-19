@@ -1,12 +1,13 @@
 import React from "react";
 import SearchIcon from "assets/search.svg"
+import StyledSearchBox from "./SearchBox.styles";
 
 const SearchBox = (props) => {
   return (
-    <div>
+    <StyledSearchBox>
       <SearchIcon width={35} height={35} />
-      <input type="text" name="search" />
-    </div>
+      <input type="text" name="search" placeholder="Search" />
+    </StyledSearchBox>
   )
 }
 

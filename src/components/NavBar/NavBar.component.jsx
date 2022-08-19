@@ -3,18 +3,23 @@ import Logo from "assets/Generic_store.svg"
 import SearchBox from "components/SearchBox/SearchBox.component";
 import UserControls from "components/UserControls/UserControls.component";
 import { Sections } from "components/Sections/Sections.component";
+import { StyledSiteControls, StyledNavBar, StyledShopBtn, StyledShop } from "./NavBar.styles";
 
 
 const NavBar = () => (
-  <div>
-
-    <div>
-      <Logo />
+  <StyledNavBar>
+    <StyledSiteControls>
+      <StyledShop>
+        <Logo />
+        <StyledShopBtn>
+          Shop ⮊
+        </StyledShopBtn>
+      </StyledShop>
       <SearchBox />
       <UserControls />
-    </div>
+    </StyledSiteControls>
     <Sections />
-  </div>
+  </StyledNavBar>
 )
 
 export default NavBar;

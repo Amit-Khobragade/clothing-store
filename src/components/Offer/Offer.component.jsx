@@ -6,9 +6,12 @@ const Offer = ({ redirectURL, imageURL, content }) => {
 
   return (
     <Link to={redirectURL}>
-      <img src={imageURL} onLoad={() => setIsImageLoaded(true)} />
-      {!isImageLoaded && <h1>loading offer</h1>}
-      <h1>{content}</h1>
+      <div className="offer">
+        <img src={imageURL} onLoad={() => setIsImageLoaded(true)} />
+        {!isImageLoaded && <h1>loading offer</h1>}
+        <div className="filter"></div>
+        <h1>{content}</h1>
+      </div>
     </Link>
   )
 }

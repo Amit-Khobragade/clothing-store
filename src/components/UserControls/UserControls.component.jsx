@@ -2,14 +2,14 @@ import React from "react";
 import WishListIcon from 'assets/heart.svg'
 import CartIcon from 'assets/cart.svg'
 import AccountIcon from 'assets/account.svg'
+import StyledUserControls from "./UserControls.styles";
 
 const UserControls = (props) => (
-  <div>
-    <h3>Shop ⮊</h3>
+  <StyledUserControls>
     <WishListIcon />
     <CartIcon />
     <AccountIcon />
-  </div>
+  </StyledUserControls>
 )
 
 export default UserControls;

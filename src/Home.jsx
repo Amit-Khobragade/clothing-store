@@ -4,10 +4,10 @@ import { GroupOffers } from "areas/GroupOffers/GroupOffers";
 
 const Home = (props) => {
   return (
-    <div>
+    <main>
       <OffersBanner />
       <GroupOffers />
-    </div>
+    </main>
   );
 };
 

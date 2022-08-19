@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { OfferSlider } from "components/OfferSlider/OfferSlider.component";
 import { OffersContext } from "context/OffersContext/OffersContext";
+import StyledOfferGroups from "./GroupOffers.styles";
 
 export const GroupOffers = () => {
   const { groups: offerGroups } = useContext(OffersContext);
@@ -9,8 +10,8 @@ export const GroupOffers = () => {
   }
 
   return (
-    <div>
+    <StyledOfferGroups>
       {offerGroups.map((OfferGroup, index) => <OfferSlider key={index} offerGroup={OfferGroup} />)}
-    </div>
+    </StyledOfferGroups>
   )
 }
