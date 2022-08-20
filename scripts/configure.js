@@ -15,11 +15,9 @@ if (err) {
 }
 
 const webpackConf = require("./config/webpack.config")(isDev);
-console.log(webpackConf);
 const compiler = Webpack(webpackConf);
 
 if (isDev) {
-  console.log(process.env.isDev);
   const devServerConf = { ...webpackConf.devServer, open: true };
   const server = new WebpackDevServer(devServerConf, compiler);
 

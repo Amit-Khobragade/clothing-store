@@ -29,12 +29,14 @@ module.exports = (isDev) => ({
   module: {
     strictExportPresence: true,
     rules: [
-      !isDev && {
-        enforce: "pre",
-        exclude: /@babel(?:\/|\\{1,2})runtime/,
-        test: /\.(js|mjs|jsx|ts|tsx|css)$/,
-        loader: require.resolve("source-map-loader"),
-      },
+      !isDev
+        ? {
+            enforce: "pre",
+            exclude: /@babel(?:\/|\\{1,2})runtime/,
+            test: /\.(js|mjs|jsx|ts|tsx|css)$/,
+            loader: require.resolve("source-map-loader"),
+          }
+        : {},
       {
         test: /\.?jsx?$/,
         include: paths.srcDir,
