@@ -3,7 +3,7 @@ import { OfferSlider } from "components/OfferSlider/OfferSlider.component";
 import { OffersContext } from "context/OffersContext/OffersContext";
 import StyledOfferGroups from "./GroupOffers.styles";
 
-export const GroupOffers = () => {
+const GroupOffers = () => {
   const { groups: offerGroups } = useContext(OffersContext);
   if (!offerGroups.length) {
     return <h1>Offer Groups loading...</h1>
@@ -15,3 +15,4 @@ export const GroupOffers = () => {
     </StyledOfferGroups>
   )
 }
+export default GroupOffers;
