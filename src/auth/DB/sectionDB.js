@@ -1,7 +1,7 @@
 import { collection, getDocs, query } from "firebase/firestore";
 import { store } from "auth/app/firebase";
 
-export const getSections = async () => {
+const getSections = async () => {
   const q = query(collection(store, "sections"));
   const snapshot = await getDocs(q);
   const sections = {};
@@ -14,3 +14,5 @@ export const getSections = async () => {
 
   return sections;
 };
+
+export default getSections;
