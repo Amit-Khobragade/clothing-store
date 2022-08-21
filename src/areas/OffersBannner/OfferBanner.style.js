@@ -32,3 +32,22 @@ export const BannerController = styled.div`
   gap: 20px;
 `;
 
+export const BannerControllerBtn = styled.div`
+  background: #ededed;
+  border-radius: 10px;
+  height: 7px;
+  width: 30px;
+
+  & > div {
+    background: #959595;
+    border-radius: 10px;
+    height: 100%;
+    width: 0;
+
+    ${(props) =>
+      props.isActive &&
+      css`
+        animation: ${btnAnimation} ${props.duration}ms ease-in-out;
+      `}
+  }
+`;
