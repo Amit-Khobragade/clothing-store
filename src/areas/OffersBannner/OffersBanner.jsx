@@ -4,15 +4,12 @@ import { OffersContext } from "context/OffersContext/OffersContext";
 import StyledOffersBanner from "./OfferBanner.style";
 
 const OffersBanner = () => {
-  const { banners: offers } = useContext(OffersContext);
-
-  if (!offers.length) {
-    return (<h1>Offers</h1>);
-  }
+  const { banners: offerBanners } = useContext(OffersContext);
 
   return (
     <StyledOffersBanner>
-      {offers.map((offerObject, index) => (<Offer {...offerObject.offer} key={index} />))}
+      {!offerBanners.length && <h1>Offers Loading</h1>}
+      {offerBanners.map((banner, index) => (<Offer {...banner.offer} key={index} />))}
     </StyledOffersBanner>
   )
 }
