@@ -18,4 +18,5 @@ module.exports = {
   assetsDir: resolve("src/assets"),
   areaDir: resolve("src/areas"),
   contextDir: resolve("src/context"),
+  cacheDir: resolve(".temp-cache"),
 };

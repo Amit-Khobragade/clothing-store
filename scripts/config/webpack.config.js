@@ -90,5 +90,9 @@ module.exports = (isDev) => ({
       context: paths.contextDir,
     },
   },
+  cache: {
+    type: "filesystem",
+    cacheDirectory: paths.cacheDir,
+  },
   devtool: "source-map",
 });
