@@ -8,8 +8,9 @@ import {
 } from "firebase/auth";
 
 import { getOrCreateUserDoc, getUser, setUser, UserDoc } from "auth/DB/userDB";
+import { app } from "./app/firebase";
 
-const auth = getAuth();
+const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 export function getCurrentUser() {
