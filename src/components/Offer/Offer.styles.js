@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components";
+
 export const StyledOffersComponent = styled.div`
+  border-radius: var(--border-radius);
+  display: inline-block;
+  position: relative;
   ${(props) =>
     props.isGrouped
       ? css`
@@ -7,24 +11,17 @@ export const StyledOffersComponent = styled.div`
           box-shadow: 2px 2px 6px rgba(107, 107, 107, 0.5);
           height: 500px;
           width: 480px;
+          transition: all 500ms linear;
+
+          &: hover {
+            box-shadow: 3px 3px 6px rgba(107, 107, 107, 0.5);
+            transform: scale(1.03);
+          }
         `
       : css`
           height: 100%;
           width: 100vw;
         `}
-  border-radius: var(--border-radius);
-  display: inline-block;
-  position: relative;
-  transition: all 500ms linear;
-
-  &:hover {
-    ${(props) =>
-      props.isGrouped &&
-      css`
-        box-shadow: 3px 3px 6px rgba(107, 107, 107, 0.5);
-        transform: scale(1.03);
-      `}
-  }
 
   & > img {
     border-radius: var(--border-radius);
