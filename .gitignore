@@ -105,3 +105,4 @@ dist
 .run.sh
 src/auth/app/firebase.js
 .vscode
+.temp-cache
