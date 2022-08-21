@@ -20,6 +20,7 @@ export const StyledUserControls = styled.div`
 export const UserController = styled.div`
   align-items: center;
   background: transparent;
+  cursor: pointer;
   flex-grow: 0.00001;
   justify-content: space-evenly;
   transition: all 500ms linear;
