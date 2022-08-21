@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { SectionContext } from "context/SectionContext/SectionContext";
 import StyledSections from "./Sections.styles";
 
-export const Sections = (props) => {
+const Sections = (props) => {
   const sections = useContext(SectionContext)[0];
   if (!sections) {
     return <h1>loading sections...</h1>
@@ -13,3 +13,5 @@ export const Sections = (props) => {
     </StyledSections>
   )
 }
+
+export default Sections;
