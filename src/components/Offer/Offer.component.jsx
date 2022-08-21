@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { StyledFilterComponent, StyledOffersComponent } from "./Offer.styles";
 
 const Offer = ({ redirectURL, imageURL, content }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
