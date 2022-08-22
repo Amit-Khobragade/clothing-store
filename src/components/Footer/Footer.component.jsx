@@ -5,43 +5,43 @@ import StyledFooter from "./Footer.styles";
 const HelpComponent = () => (
   <ul className="links">
     <h3>Need Help?</h3>
-    <li><Link to={'/'}>Customer Care</Link></li>
-    <li><Link to={'/'}>FAQ</Link></li>
-    <li><Link to={'/'}>Returns</Link></li>
-    <li><Link to={'/'}>Cancellations</Link></li>
-    <li><Link to={'/'}>Payments</Link></li>
-    <li><Link to={'/'}>Track Your Orders</Link></li>
+    <li><Link to={'/dev'}>Customer Care</Link></li>
+    <li><Link to={'/dev'}>FAQ</Link></li>
+    <li><Link to={'/dev'}>Returns</Link></li>
+    <li><Link to={'/dev'}>Cancellations</Link></li>
+    <li><Link to={'/dev'}>Payments</Link></li>
+    <li><Link to={'/dev'}>Track Your Orders</Link></li>
   </ul>
 )
 
 const AccountsComponent = () => (
   <ul className="links">
     <h3>Your Account</h3>
-    <li><Link to={'/'}>Orders</Link></li>
-    <li><Link to={'/'}>Transactions</Link></li>
-    <li><Link to={'/'}>Saved Address</Link></li>
-    <li><Link to={'/'}>Coupon</Link></li>
-    <li><Link to={'/'}>Returns</Link></li>
+    <li><Link to={'/dev'}>Orders</Link></li>
+    <li><Link to={'/dev'}>Transactions</Link></li>
+    <li><Link to={'/dev'}>Saved Address</Link></li>
+    <li><Link to={'/dev'}>Coupon</Link></li>
+    <li><Link to={'/dev'}>Returns</Link></li>
   </ul>
 )
 
 const ShopByComponent = () => (
   <ul className="links">
     <h3>Shop By</h3>
-    <li><Link to={'/'}>Men</Link></li>
-    <li><Link to={'/'}>Women</Link></li>
-    <li><Link to={'/'}>Shoes</Link></li>
-    <li><Link to={'/'}>Torso</Link></li>
+    <li><Link to={'/dev'}>Men</Link></li>
+    <li><Link to={'/dev'}>Women</Link></li>
+    <li><Link to={'/dev'}>Shoes</Link></li>
+    <li><Link to={'/dev'}>Torso</Link></li>
   </ul>
 )
 
 const SocialComponent = () => (
   <ul className="links">
     <h3>Follow Us</h3>
-    <li><Link to={'/'}>Instagram</Link></li>
-    <li><Link to={'/'}>Twitter</Link></li>
-    <li><Link to={'/'}>Facebook</Link></li>
-    <li><Link to={'/'}>Pintrest</Link></li>
+    <li><Link to={'/dev'}>Instagram</Link></li>
+    <li><Link to={'/dev'}>Twitter</Link></li>
+    <li><Link to={'/dev'}>Facebook</Link></li>
+    <li><Link to={'/dev'}>Pintrest</Link></li>
   </ul>
 )
 
