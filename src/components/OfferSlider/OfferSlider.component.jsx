@@ -18,9 +18,17 @@ const OfferSlider = ({ offerGroup }) => {
   const right = () => slider.current.scrollLeft += scrollLength;
 
   return (
-    <StyledOfferSlider>
-      {offerGroup.offers.map((offerElement, index) => (<Offer key={index} isGrouped={true} {...offerElement} />))}
-    </StyledOfferSlider>
+    <div style={{ position: "relative" }}>
+      <SliderButton prev onClick={left} inactive={!!isInactive?.left}>
+        {'‹'}
+      </SliderButton>
+      <StyledSliderComponent ref={slider} onScroll={scrollController}>
+        {offerGroup.offers.map((offerElement, index) => (<Offer key={index} isGrouped={true} {...offerElement} />))}
+      </StyledSliderComponent>
+      <SliderButton next onClick={right} inactive={!!isInactive?.right}>
+        {'›'}
+      </SliderButton>
+    </div>
   )
 }
 
