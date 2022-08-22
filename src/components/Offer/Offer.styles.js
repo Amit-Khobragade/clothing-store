@@ -11,11 +11,12 @@ export const StyledOffersComponent = styled.div`
           box-shadow: 2px 2px 6px rgba(107, 107, 107, 0.5);
           height: 500px;
           width: 480px;
-          transition: all 500ms linear;
+          overflow: clip;
 
-          &: hover {
-            box-shadow: 3px 3px 6px rgba(107, 107, 107, 0.5);
-            transform: scale(1.03);
+          &:hover {
+            & > img {
+              transform: scale(1.03);
+            }
           }
         `
       : css`
@@ -27,6 +28,7 @@ export const StyledOffersComponent = styled.div`
     border-radius: var(--border-radius);
     height: 100%;
     object-fit: cover;
+    transition: all 500ms linear;
     width: 100%;
   }
 
