@@ -1,35 +1,20 @@
 import styled from "styled-components";
 
-const StyledSearchBox = styled.div`
-  position: relative;
-  width: 318px;
-  height: 58px;
+const StyledInput = styled.input`
+  background: url(assets/search.svg) no-repeat 5% center/1rem;
+  border: 1px solid;
+  border-radius: 1rem;
+  box-shadow: inset 0.2rem 0.2rem 0.25rem rgb(255 255 255 / 50%), inset -3px -3px 4px rgb(0 0 0 / 25%);
+  font-size: 1rem;
+  height: 2rem;
+  padding-left: 2rem;    
+  width: 12rem;
 
-  & input {
-    background: var(--secondary-clr);
-    border-color: transparent;
-    border-radius: 19px;
-    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25),
-      inset -3px -3px 4px rgba(0, 0, 0, 0.25);
-
-    line-height: 44px;
-    width: 100%;
-
-    & {
-      padding-left: 80px;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 32px;
-      height: 100%;
-    }
+  &::placeholder {
+    text-transform: capitalize;
+    font-size:1rem;
   }
-
-  & svg {
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    transform: translateY(-50%);
-  }
+}
 `;
 
-export default StyledSearchBox;
+export default StyledInput;
