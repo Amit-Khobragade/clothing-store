@@ -92,6 +92,7 @@ module.exports = (isDev) => ({
       auth: paths.authDir,
       areas: paths.areaDir,
       context: paths.contextDir,
+      styles: paths.stylesDir,
     },
   },
   cache: {
