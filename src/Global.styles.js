@@ -44,7 +44,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: monospace;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 26px;
     text-align: center;
   }

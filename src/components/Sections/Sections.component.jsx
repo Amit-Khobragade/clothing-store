@@ -9,7 +9,7 @@ const Sections = (props) => {
   }
   return (
     <StyledSections>
-      {Object.keys(sections).map((key, index) => <h2 key={index}>{key}</h2>)}
+      {Object.keys(sections).map((key, index) => <h3 key={index}>{key}</h3>)}
     </StyledSections>
   )
 }
