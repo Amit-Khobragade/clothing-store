@@ -1,59 +1,60 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import StyledFooter from "./Footer.styles";
 
 const HelpComponent = () => (
-  <div>
+  <ul className="links">
     <h3>Need Help?</h3>
-    <Link to={'/'}>Customer Care</Link>
-    <Link to={'/'}>FAQ</Link>
-    <Link to={'/'}>Returns</Link>
-    <Link to={'/'}>Cancellations</Link>
-    <Link to={'/'}>Payments</Link>
-    <Link to={'/'}>Track Your Orders</Link>
-  </div>
+    <li><Link to={'/dev'}>Customer Care</Link></li>
+    <li><Link to={'/dev'}>FAQ</Link></li>
+    <li><Link to={'/dev'}>Returns</Link></li>
+    <li><Link to={'/dev'}>Cancellations</Link></li>
+    <li><Link to={'/dev'}>Payments</Link></li>
+    <li><Link to={'/dev'}>Track Your Orders</Link></li>
+  </ul>
 )
 
 const AccountsComponent = () => (
-  <div>
+  <ul className="links">
     <h3>Your Account</h3>
-    <Link to={'/'}>Orders</Link>
-    <Link to={'/'}>Transactions</Link>
-    <Link to={'/'}>Saved Address</Link>
-    <Link to={'/'}>Coupon</Link>
-    <Link to={'/'}>Returns</Link>
-  </div>
+    <li><Link to={'/dev'}>Orders</Link></li>
+    <li><Link to={'/dev'}>Transactions</Link></li>
+    <li><Link to={'/dev'}>Saved Address</Link></li>
+    <li><Link to={'/dev'}>Coupon</Link></li>
+    <li><Link to={'/dev'}>Returns</Link></li>
+  </ul>
 )
 
 const ShopByComponent = () => (
-  <div>
+  <ul className="links">
     <h3>Shop By</h3>
-    <Link to={'/'}>Men</Link>
-    <Link to={'/'}>Women</Link>
-    <Link to={'/'}>Shoes</Link>
-    <Link to={'/'}>Torso</Link>
-  </div>
+    <li><Link to={'/dev'}>Men</Link></li>
+    <li><Link to={'/dev'}>Women</Link></li>
+    <li><Link to={'/dev'}>Shoes</Link></li>
+    <li><Link to={'/dev'}>Torso</Link></li>
+  </ul>
 )
 
 const SocialComponent = () => (
-  <div>
+  <ul className="links">
     <h3>Follow Us</h3>
-    <Link to={'/'}>Instagram</Link>
-    <Link to={'/'}>Twitter</Link>
-    <Link to={'/'}>Facebook</Link>
-    <Link to={'/'}>Pintrest</Link>
-  </div>
+    <li><Link to={'/dev'}>Instagram</Link></li>
+    <li><Link to={'/dev'}>Twitter</Link></li>
+    <li><Link to={'/dev'}>Facebook</Link></li>
+    <li><Link to={'/dev'}>Pintrest</Link></li>
+  </ul>
 )
 
 const Footer = (props) => (
-  <div>
-    <div>
+  <StyledFooter>
+    <div className="navigation">
       <HelpComponent />
       <AccountsComponent />
       <ShopByComponent />
       <SocialComponent />
     </div>
 
-  </div>
+  </StyledFooter>
 )
 
 export default Footer;

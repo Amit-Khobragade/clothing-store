@@ -6,11 +6,11 @@ import {
   signOut,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import { getDoc, setDoc } from "firebase/firestore";
-// ! contains firebase auth api keys would be available in the first production build
-import { users, UserDoc } from "auth/app/firebase";
 
-const auth = getAuth();
+import { getOrCreateUserDoc, getUser, setUser, UserDoc } from "auth/DB/userDB";
+import { app } from "./app/firebase";
+
+const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 export function getCurrentUser() {
@@ -55,26 +55,4 @@ export async function signUpWithEmailAndPass({
 
 export function signOutUser() {
   signOut(auth);
-}
-
-// ! functions required for internal
-// ! working of the module
-async function getOrCreateUserDoc(user) {
-  let userdoc = null;
-  if (!(userdoc = await getUser(user))) {
-    await setUser(user);
-    userdoc = getUser(user);
-  }
-  return userdoc;
-}
-
-async function getUser(user) {
-  const docSnapshot = await getDoc(users(user.uid));
-  if (docSnapshot.exists()) {
-    return docSnapshot.data();
-  }
-}
-
-async function setUser(user) {
-  await setDoc(users(user.uid), user);
 }

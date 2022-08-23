@@ -1,13 +1,9 @@
 import React from "react";
 import SearchIcon from "assets/search.svg"
+import StyledInput from "./SearchBox.styles";
 
 const SearchBox = (props) => {
-  return (
-    <div>
-      <SearchIcon width={35} height={35} />
-      <input type="text" name="search" />
-    </div>
-  )
+  return (<StyledInput placeholder="search" />)
 }
 
 export default SearchBox;

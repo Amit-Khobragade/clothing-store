@@ -1,11 +1,13 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import OffersBanner from "areas/OffersBannner/OffersBanner";
+import GroupOffers from "areas/GroupOffers/GroupOffers";
 
 const Home = (props) => {
   return (
-    <div>
-      <h1>home</h1>
-    </div>
+    <main>
+      <OffersBanner />
+      <GroupOffers />
+    </main>
   );
 };
 

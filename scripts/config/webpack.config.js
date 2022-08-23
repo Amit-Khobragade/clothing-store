@@ -1,13 +1,9 @@
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const InlineChunkHtmlPlugin = require("inline-chunk-html-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const paths = require("./paths");
 
-const { isDev } = process.env;
-
-if (!isDev) {
-  throw new Error("config not found");
-}
-
-module.exports = () => ({
+module.exports = (isDev) => ({
   devServer: isDev
     ? {
         static: { directory: paths.publicDir },
@@ -16,35 +12,45 @@ module.exports = () => ({
         hot: true,
         historyApiFallback: true,
       }
-    : null,
+    : {},
   entry: paths.IndexJSPath,
   mode: isDev ? "development" : "production",
   output: {
     path: paths.buildDir,
-    filename: isDev
+    filename: !isDev
+      ? "static/js/[name].[contenthash:8].js"
+      : "static/js/[name].js",
+    chunkFilename: !isDev
       ? "static/js/[name].[contenthash:8].chunk.js"
       : "static/js/[name].chunk.js",
-    assetModuleFilename: isDev
-      ? "static/media/[name][ext]"
-      : "static/media/[name].[hash][ext]",
+    assetModuleFilename: !isDev
+      ? "static/media/[name].[hash][ext]"
+      : "static/media/[name][ext]",
   },
   module: {
+    strictExportPresence: true,
     rules: [
+      !isDev
+        ? {
+            enforce: "pre",
+            exclude: /@babel(?:\/|\\{1,2})runtime/,
+            test: /\.(js|mjs|jsx|ts|tsx|css)$/,
+            loader: require.resolve("source-map-loader"),
+          }
+        : {},
       {
         test: /\.?jsx?$/,
-        exclude: /(node_modules|config)/,
+        include: paths.srcDir,
         use: [
           {
             loader: "babel-loader",
             options: {
               presets: ["@babel/preset-env", "@babel/preset-react"],
+              // cacheDirectories: true,
+              compact: !isDev,
             },
           },
         ],
-      },
-      {
-        test: /.css$/,
-        use: ["style-loader", "css-loader"],
       },
       {
         test: /.(png|jpe?g)$/,
@@ -53,10 +59,6 @@ module.exports = () => ({
       {
         test: /.svg$/,
         use: ["@svgr/webpack"],
-      },
-      {
-        test: /.s[ac]ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -77,6 +79,10 @@ module.exports = () => ({
             useShortDoctype: true,
           },
     }),
+    new InlineChunkHtmlPlugin(HTMLWebpackPlugin, [/runtime/]),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/assets/", to: "assets" }],
+    }),
   ],
   resolve: {
     extensions: [".js", ".json", ".wasm", ".jsx", ".component.jsx"],
@@ -84,7 +90,14 @@ module.exports = () => ({
       components: paths.componentsDir,
       assets: paths.assetsDir,
       auth: paths.authDir,
+      areas: paths.areaDir,
+      context: paths.contextDir,
+      styles: paths.stylesDir,
     },
   },
-  devtool: "eval-source-map",
+  cache: {
+    type: "filesystem",
+    cacheDirectory: paths.cacheDir,
+  },
+  devtool: "source-map",
 });
