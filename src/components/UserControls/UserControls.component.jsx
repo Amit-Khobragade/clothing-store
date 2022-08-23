@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import WishListIcon from 'assets/heart.svg'
-import CartIcon from 'assets/cart.svg'
-import AccountIcon from 'assets/account.svg'
 import { DropDownUserController, StyledUserControls, UserController } from "./UserControls.styles";
 import { Link } from "react-router-dom";
+import IconBtn from "styles/IconBtn/IconBtn.styles";
 
 const UserControls = (props) => {
 
@@ -18,15 +16,15 @@ const UserControls = (props) => {
 
       {/* The Button componets with their svgs are placed in this area  */}
       <UserController current={wishlistState} onClick={toggleWishlist}>
-        <WishListIcon />
+        <IconBtn url="assets/heart.svg" size="2rem" />
         <h3>wishlist</h3>
       </UserController>
       <UserController current={cartState} onClick={toggleCart}>
-        <CartIcon />
+        <IconBtn url="assets/cart.svg" size="2rem" />
         <h3>cart</h3>
       </UserController>
       <UserController current={accountState} onClick={toggleAccount}>
-        < AccountIcon />
+        <IconBtn url="assets/account.svg" size="2rem" />
         <h3>account</h3>
       </UserController>
 
