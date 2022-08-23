@@ -16,7 +16,7 @@ export const BannerDisplay = styled.div`
 `;
 
 export const OffersContainer = styled.div`
-  height: calc(100vh - 128px);
+  height: calc(100vh - 79px);
   display: flex;
   transform: translateX(calc(${(props) => props.currentPos}* -100vw));
   transition: transform 1.5s cubic-bezier(0.9, 0.05, 0.46, 1.22);
