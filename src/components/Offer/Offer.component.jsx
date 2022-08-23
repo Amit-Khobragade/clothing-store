@@ -9,9 +9,9 @@ const Offer = ({ redirectURL, imageURL, content, isGrouped }) => {
     <Link to={redirectURL}>
       <StyledOffersComponent isGrouped={isGrouped}>
         <img src={imageURL} onLoad={() => setIsImageLoaded(true)} />
-        {!isImageLoaded && <h1>loading offer</h1>}
+        {!isImageLoaded && <h3>loading offer</h3>}
         {!isGrouped && <StyledFilterComponent></StyledFilterComponent>}
-        <h1>{content}</h1>
+        <h3>{content}</h3>
       </StyledOffersComponent>
     </Link>
   )

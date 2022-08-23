@@ -3,9 +3,9 @@ import styled, { css } from "styled-components";
 export const StyledUserControls = styled.div`
   align-items: center;
   display: flex;
-  gap: 20px;
-  justify-content: flex-start;
-  width: 8rem;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+  width: 10rem;
 
   ${(props) =>
     props.current.includes(1) &&
@@ -62,6 +62,7 @@ export const DropDownUserController = styled.div`
   overflow: hidden;
   position: absolute;
   width: 100%;
+  max-width: 10rem;
   height: 0;
   transition: all 250ms linear, transform 500ms;
 

@@ -12,7 +12,7 @@ const OffersBanner = () => {
   return (
     <BannerDisplay>
       <OffersContainer currentPos={currPos}>
-        {!offerBanners.length && <h1>Offers Loading</h1>}
+        {!offerBanners.length && <h3>Offers Loading</h3>}
         {offerBanners.map((banner, index) => (<Offer {...banner.offer} key={index} />))}
       </OffersContainer>
       <BannerController>

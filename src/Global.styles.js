@@ -41,10 +41,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h3 {
-    font-family: monospace;
+    font-family: sans-serif;
+    white-space: break-spaces;
     font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
+    font-weight: 200;
+    font-size: 2rem;
     line-height: 26px;
     text-align: center;
   }

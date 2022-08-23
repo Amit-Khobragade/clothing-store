@@ -8,10 +8,10 @@ const GroupOffers = () => {
 
   return (
     <>
-      {!offerGroups.length && <h1>Offers loading</h1>}
+      {!offerGroups.length && <h3>Offers loading</h3>}
       {offerGroups.map((group, index) => (
         <StyledOfferGroup key={index}>
-          <h1>{group.title}</h1>
+          <h3>{group.title}</h3>
           <OfferSlider offerGroup={group} />
         </StyledOfferGroup>
       )

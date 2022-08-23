@@ -4,9 +4,9 @@ const StyledOfferGroup = styled.section`
   margin: 50px 0 20px 0;
   padding: 0 5px;
 
-  & > h1 {
+  & > h3 {
     padding: 20px 0;
-    font-size: 50px;
+    font-size: 2.25rem;
     text-align: left;
   }
 `;

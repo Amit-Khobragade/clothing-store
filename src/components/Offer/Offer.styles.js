@@ -9,8 +9,8 @@ export const StyledOffersComponent = styled.div`
       ? css`
           --border-radius: 10px;
           box-shadow: 2px 2px 6px rgba(107, 107, 107, 0.5);
-          height: 500px;
-          width: 480px;
+          height: 22rem;
+          width: 26rem;
           overflow: clip;
 
           &:hover {
@@ -32,20 +32,20 @@ export const StyledOffersComponent = styled.div`
     width: 100%;
   }
 
-  & > h1 {
+  & > h3 {
     ${(props) =>
       props.isGrouped
         ? css`
+            background: rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(5px) saturate(1);
             border-bottom-left-radius: var(--border-radius);
             border-bottom-right-radius: var(--border-radius);
             bottom: 0;
             color: var(--text-light-clr);
-            height: 8rem;
+            height: 6rem;
             left: 0;
             padding: 0.75rem;
             width: 100%;
-            background: rgba(0, 0, 0, 0.25);
           `
         : css`
             bottom: 30px;
