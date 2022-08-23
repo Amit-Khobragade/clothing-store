@@ -1,5 +1,6 @@
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const InlineChunkHtmlPlugin = require("inline-chunk-html-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const paths = require("./paths");
 
 module.exports = (isDev) => ({
@@ -79,6 +80,9 @@ module.exports = (isDev) => ({
           },
     }),
     new InlineChunkHtmlPlugin(HTMLWebpackPlugin, [/runtime/]),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/assets/", to: "assets" }],
+    }),
   ],
   resolve: {
     extensions: [".js", ".json", ".wasm", ".jsx", ".component.jsx"],
@@ -88,6 +92,7 @@ module.exports = (isDev) => ({
       auth: paths.authDir,
       areas: paths.areaDir,
       context: paths.contextDir,
+      styles: paths.stylesDir,
     },
   },
   cache: {

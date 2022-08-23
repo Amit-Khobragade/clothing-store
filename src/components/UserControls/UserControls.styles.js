@@ -5,7 +5,7 @@ export const StyledUserControls = styled.div`
   display: flex;
   gap: 20px;
   justify-content: flex-start;
-  width: 232px;
+  width: 8rem;
 
   ${(props) =>
     props.current.includes(1) &&
@@ -24,7 +24,7 @@ export const UserController = styled.div`
   flex-grow: 0.00001;
   justify-content: space-evenly;
   transition: all 500ms linear;
-  width: 64px;
+  width: 2rem;
   ${(props) => {
     if (props.current === 1) {
       return css`
@@ -68,7 +68,7 @@ export const DropDownUserController = styled.div`
   ${(props) =>
     props.current === 1 &&
     css`
-      height: 300px;
+      height: 10rem;
       transform: translateY(100%);
       transition: all 500ms linear, transform 250ms;
     `}
