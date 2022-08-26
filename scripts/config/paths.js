@@ -20,4 +20,5 @@ module.exports = {
   contextDir: resolve("src/context"),
   cacheDir: resolve(".temp-cache"),
   stylesDir: resolve("src/styles"),
+  indexProdEntry: resolve("src/service-worker.js"),
 };
