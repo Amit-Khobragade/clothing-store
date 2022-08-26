@@ -49,6 +49,7 @@ export const UserController = styled.div`
 
   & > h3 {
     display: ${(props) => (props.current === 1 ? "inline-block" : "none")};
+    font-size: 1.5rem;
   }
 `;
 
